@@ -1,4 +1,15 @@
 <?php
+
+function format_sum ($number) {
+        $sum = ceil($number);
+    if ($sum < 1000) {
+        return $sum . '<b class="rub">р</b>';
+    }
+    else {
+        return number_format($sum, 0, '.', ' ') . '<b class="rub">р</b>';
+    }
+}
+
 $is_auth = (bool) rand(0, 1);
 
 $user_name = 'Константин';
@@ -130,7 +141,7 @@ $goods = [
                         <div class="lot__state">
                             <div class="lot__rate">
                                 <span class="lot__amount">Стартовая цена</span>
-                                <span class="lot__cost"><?php echo $elem['price'];?><b class="rub">р</b></span>
+                                <span class="lot__cost"><?php echo format_sum($elem['price']);?></span>
                             </div>
                             <div class="lot__timer timer">
 
