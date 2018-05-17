@@ -43,7 +43,15 @@
                             <span class="lot__cost"><?php echo format_sum($elem['price']);?></span>
                         </div>
                         <div class="lot__timer timer">
+                            <?php
+                            date_default_timezone_set("Europe/Moscow");
+                            $date=  mktime(23, 59, 59)-time();
+                            $hour=($date-$date%3600)/3600;
+                            $el = $date%3600;
 
+                            $min= floor($el/60);
+                            echo $hour.' : '.$min;
+                            ?>
                         </div>
                     </div>
                 </div>
