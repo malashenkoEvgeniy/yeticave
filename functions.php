@@ -20,3 +20,7 @@ function renderTemplate ($file, $date) {
         return '';
     }
 }
+
+function get_time ($date) {
+
+}
