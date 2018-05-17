@@ -1,65 +1,8 @@
-<?php
-
-function format_sum ($number) {
-    $sum = ceil($number);
-    if ($sum < 1000) {
-        return $sum . '<b class="rub">р</b>';
-    }
-    else {
-        return number_format($sum, 0, '.', ' ') . '<b class="rub">р</b>';
-    }
-}
-
-$is_auth = (bool) rand(0, 1);
-
-$user_name = 'Константин';
-$user_avatar = 'img/user.jpg';
-$category = ['Доски и лыжи', 'Крепления', 'Ботинки', 'Одежда', 'Инструменты', 'Разное'];
-$goods = [
-    [
-        'name' => '2014 Rossignol Disctrict Snowboard',
-        'category' => 'Доски и лыжи',
-        'price' => 10999,
-        'image' => 'img/lot-1.jpg'
-    ],
-    [
-        'name' => 'DC Ply Mens 2016/2017 Snowboard',
-        'category' => 'Доски и лыжи',
-        'price' => 159999,
-        'image' => 'img/lot-2.jpg'
-    ],
-    [
-        'name' => 'Крепления Union Contact Pro 2015 года размер L/XL',
-        'category' => 'Крепления',
-        'price' => 8000,
-        'image' => 'img/lot-3.jpg'
-    ],
-    [
-        'name' => 'Ботинки для сноуборда DC Mutiny Charcoal',
-        'category' => 'Ботинки',
-        'price' => 10999,
-        'image' => 'img/lot-4.jpg'
-    ],
-    [
-        'name' => 'Куртка для сноуборда DC Mutiny Charcoal',
-        'category' => 'Одежда',
-        'price' => 7500,
-        'image' => 'img/lot-5.jpg'
-    ],
-    [
-        'name' => 'Маска Oakley Canopy',
-        'category' => 'Разное',
-        'price' => 5400,
-        'image' => "img/lot-6.jpg"
-    ]
-];
-
-?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title><?php $title; ?></title>
+    <title><?= $title; ?></title>
     <link href="css/normalize.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -98,12 +41,13 @@ $goods = [
     </div>
 </header>
 
-<main class="container"><?php $container;?></main>
+<main class="container"><?= $content;?></main>
 
 <footer class="main-footer">
     <nav class="nav">
         <ul class="nav__list container">
             <?php
+            $category = ['Доски и лыжи', 'Крепления', 'Ботинки', 'Одежда', 'Инструменты', 'Разное'];
             foreach ($category as $elem):
                 ?>
                 <li class="nav__item">
