@@ -5,8 +5,9 @@ $config = [
   'enable' => true
 ];
 if ($config['enable']) {
-  $page_content = renderTemplate($config['tpl_path'].'index.php', ['goods'=>$goods]);
-$content = renderTemplate($config['tpl_path'].'layout.php', ['content'=>$page_content, 'category' => $category, 'is_auth' => $is_auth, 'user_avatar'=>$user_avatar, 'user_name'=> $user_name]);
+  $lot_content = renderTemplate($config['tpl_path'].'lot.php', ['goods'=>$goods]);
+  $page_content = renderTemplate($config['tpl_path'].'index.php', ['lot_content'=>$lot_content]);
+  $content = renderTemplate($config['tpl_path'].'layout.php', ['content'=>$page_content, 'category' => $category, 'is_auth' => $is_auth, 'user_avatar'=>$user_avatar, 'user_name'=> $user_name]);
 
   
 }
